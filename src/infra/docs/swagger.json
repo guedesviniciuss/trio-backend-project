@@ -1,0 +1,179 @@
+{
+  "openapi": "3.1.0",
+  "x-stoplight": {
+    "id": "yox0rc8s09y6v"
+  },
+  "info": {
+    "title": "Trio",
+    "version": "1.0",
+    "summary": "Trio Back-End Project Sync Contacts on Mailchimp",
+    "description": "You'll be creating a tool that syncs contacts from MockAPI to Mailchimp. For this integration, you will need to get each contact's first name, last name, and email address from MockAPI and create them as new members of a new list on Mailchimp. The new list on Mailchimp should have your personal name (e.g.: Gabriel Kugel).",
+    "contact": {
+      "name": "Vinicius",
+      "email": "guedesvsilva@gmail.com"
+    },
+    "license": {
+      "name": "MIT",
+      "url": "https://www.mit.edu/~amini/LICENSE.md"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3333",
+      "description": "localhost"
+    }
+  ],
+  "paths": {
+    "/contacts/sync": {
+      "parameters": [],
+      "get": {
+        "summary": "Sync Contacts",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "List of contacts synced",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SyncedContacts"
+                },
+                "examples": {
+                  "Synced Response Example": {
+                    "value": {
+                      "syncedContacts": 0,
+                      "contacts": [
+                        {
+                          "firstName": "Harry",
+                          "lastName": "Potter",
+                          "email": "harrypotter@gmail.com"
+                        },
+                        {
+                          "firstName": "Morgan",
+                          "lastName": "Freeman",
+                          "email": "morganfreeman@gmail.com"
+                        },
+                        {
+                          "firstName": "Leonardo",
+                          "lastName": "DiCaprio",
+                          "email": "leonardocaprio@gmail.com"
+                        }
+                      ]
+                    }
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "User Not Found"
+          }
+        },
+        "operationId": "",
+        "description": "Sync contacts from trio with mailchimp",
+        "x-stoplight": {
+          "id": "ugxcca17o45p6"
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "SyncedContacts": {
+        "title": "SyncedContacts",
+        "x-stoplight": {
+          "id": "osv2f3o65tnxr"
+        },
+        "type": "object",
+        "properties": {
+          "syncedContacts": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "kdy5dzff3wcqt"
+            }
+          },
+          "contacts": {
+            "type": "array",
+            "x-stoplight": {
+              "id": "r8ouf727o52mt"
+            },
+            "items": {
+              "$ref": "#/components/schemas/Contacts",
+              "x-stoplight": {
+                "id": "jvf4zhu8sm8z9"
+              }
+            }
+          }
+        }
+      },
+      "Contacts": {
+        "title": "Contacts",
+        "x-stoplight": {
+          "id": "rxec7v5umk4vb"
+        },
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "nolo8xsrj19q9"
+            }
+          },
+          "lastName": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "dav63kzvidl04"
+            }
+          },
+          "email": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "8mgealzfxqyic"
+            }
+          }
+        }
+      }
+    },
+    "responses": {
+      "SyncedContacts": {
+        "description": "Example response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/SyncedContacts"
+            },
+            "examples": {
+              "Synced Contacts Response": {
+                "value": {
+                  "syncedContacts": 0,
+                  "contacts": [
+                    {
+                      "firstName": "Harry",
+                      "lastName": "Potter",
+                      "email": "harrypotter@gmail.com"
+                    },
+                    {
+                      "firstName": "Morgan",
+                      "lastName": "Freeman",
+                      "email": "morganfreeman@gmail.com"
+                    },
+                    {
+                      "firstName": "Leonardo",
+                      "lastName": "DiCaprio",
+                      "email": "leonardocaprio@gmail.com"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
