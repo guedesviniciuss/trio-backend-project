@@ -1,7 +1,10 @@
+import { env } from '@/infra/environment'
 import axios from 'axios'
 
+const { MOCK_API_BASE_URL } = env
+
 const api = axios.create({
-  baseURL: 'https://challenge.trio.dev'
+  baseURL: MOCK_API_BASE_URL
 })
 
 export {

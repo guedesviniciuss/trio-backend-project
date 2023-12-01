@@ -35,12 +35,6 @@ const contactList: IListContacts[] = [
 
   }]
 
-const emptyContactList: IListContacts[] = []
-
-const noContent = undefined
-
 export {
-  contactList,
-  emptyContactList,
-  noContent
+  contactList
 }

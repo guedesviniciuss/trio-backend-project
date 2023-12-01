@@ -21,6 +21,10 @@
     {
       "url": "http://localhost:3333",
       "description": "localhost"
+    },
+    {
+      "url": "https://trio-backend-project-production.up.railway.app",
+      "description": "Trio Backend"
     }
   ],
   "paths": {
@@ -79,6 +83,33 @@
         "x-stoplight": {
           "id": "ugxcca17o45p6"
         }
+      }
+    },
+    "/list/{listName}": {
+      "delete": {
+        "summary": "/list/{listName}",
+        "operationId": "delete-list",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "x-stoplight": {
+          "id": "ij0r0zrgfo16u"
+        },
+        "description": "Delete list by name",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "listName",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "List name to be deleted"
+            }
+          }
+        ],
+        "x-internal": false
       }
     }
   },

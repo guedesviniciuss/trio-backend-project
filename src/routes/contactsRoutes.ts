@@ -1,4 +1,4 @@
-import { syncController } from '@/modules/contacts/sync/providers/syncFactory'
+import { syncController } from '@/modules/contacts/sync/syncFactory'
 import { Router } from 'express'
 
 const syncRoutes = Router()

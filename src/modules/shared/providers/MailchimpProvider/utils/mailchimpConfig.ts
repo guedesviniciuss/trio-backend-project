@@ -1,4 +1,4 @@
-import mailchimp from '@mailchimp/mailchimp_marketing'
+import client from '@mailchimp/mailchimp_marketing'
 import { env } from '@/infra/environment'
 
 const {
@@ -6,11 +6,11 @@ const {
   MAILCHIMP_SERVER_PREFIX
 } = env
 
-mailchimp.setConfig({
+client.setConfig({
   apiKey: MAILCHIMP_API_KEY,
   server: MAILCHIMP_SERVER_PREFIX
 })
 
 export {
-  mailchimp
+  client
 }
