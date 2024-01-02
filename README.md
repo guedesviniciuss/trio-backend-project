@@ -2,6 +2,8 @@
 
 # Back-End Project (Trio)
 
+https://trio.notion.site/Back-End-Project-2153d925049e4ae48ff2b783c81470cf
+
 > You'll be creating a tool that syncs contacts from **MockAPI** to **Mailchimp**. For this integration, you will need to get each contact's first name, last name, and email address from **MockAPI** and create them as new members of a new list on **Mailchimp**. The new list on **Mailchimp** should have your personal name (e.g.: `Gabriel Kugel`).
 
 ## Routes
